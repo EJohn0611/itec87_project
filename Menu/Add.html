@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+</head>
+<body style="background-image: url(bg.jpg);background-size:100% 100%;overflow: scroll;background-repeat: no-repeat;height: 900px;">
+
+    <div style="display: block;">
+    <div style="width: auto;height: 100px;background: linear-gradient(to bottom, #7EFFD4 0%, #588D95 100%);">
+        <div style="text-align: center;padding-top: 25px;font-family:fantasy;display: block;">
+            <b style="font-size: 50px;">Xiao's Cusine</b>
+        </div>
+
+        <div style="padding-top: 40px;">
+            <br>
+            <div style="text-align: center;">
+        <div style="display: inline-block;">
+            <a href="Menu.html" ><button class="Button">Main Dishes</button></a>
+</div>
+
+<div style="display: inline-block;">
+    <a href="Vege.html"><button class="Button">Vegetables</button></a>
+</div>
+
+<div style="display: inline-block;">
+    <a href="Desert.html"><button class="Button">Desert</button></a>
+</div>
+
+<div style="display: inline-block;">
+    <a href="Drinks.html"><button class="Button">Drinks</button></a>
+</div>
+
+<div style="display: inline-block;">
+    <a href="Add.html"><button class="Button">Add Ons</button></a>
+</div>
+<div style="display: inline-block;">
+    <button class="Button" onclick="dh()"><script src="script.js"></script>RECEIPT</button>
+</div>
+            </div>
+        </div>
+        </div>
+    </div>
+<br>
+<div style="text-align: center;margin-top: 80px;font-family: fantasy;font-size: 30px;">Add Ons</div>
+<div id="Main" style="display: block;position: absolute;padding-left: 280px;">
+
+        <div class = "Mdish"style="display: inline-block;padding-top: 20px;"><div style="font-size: larger;">₱ 130</div>Golden Crab -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  ><input type="checkbox"  id="ad1"  onclick="add()"></div>
+        <div style="padding-top: -20px;display: inline-block; margin-left: 10px;" class="MPdish">
+            <img src="crab.jpeg" alt="Golden Crab" style="width: 150px;height: 90px;border-radius: 20%;position: absolute;top: -20px;">
+        </div>
+
+        <br>
+
+        <div  class="Mdish" style="padding-top: 80px;display: inline-block;"><div style="font-size: larger;">₱ 190</div>
+        Minty Meat Roll -  -  -  -  -  -  -  -  -  -  -  -  ><input type="checkbox"  id="ad2"  onclick="add()">
+        </div>
+        <div class="MPdish" style="display: inline-block;padding-top: 50px; margin-left: 10px;">
+            <img src="roll.jpeg" alt="Minty MMeat Roll" style="width: auto;height: 90px;border-radius: 20%;position: absolute;">
+        </div>
+
+        <br>
+
+        <div  class="Mdish" style="padding-top: 80px;display: inline-block;"><div style="font-size: larger;">₱ 60</div>
+            Moon Pie -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  ><input type="checkbox"  id="ad3"  onclick="add()">
+            </div>
+            <div class="MPdish" style="display: inline-block;padding-top: 50px; margin-left: 10px;">
+                <img src="pie.jpeg" alt="Moon Pie" style="width: auto;height: 90px;border-radius: 20%;position: absolute;">
+            </div>
+
+            <br>
+
+            <div  class="Mdish" style="padding-top: 80px;display: inline-block;"><div style="font-size: larger;">₱ 150</div>
+                Golden Fried Chicken -  -  -  -  -  -  -  -  -  ><input type="checkbox"  id="ad4"  onclick="add()">
+                </div>
+                <div class="MPdish" style="display: inline-block;padding-top: 50px; margin-left: 10px;">
+                    <img src="chicken.jpeg" alt="Golden Fired Chicken" style="width: 160px;height: 85px;border-radius: 20%;position: absolute;">
+                </div>
+
+                <br>
+
+                <div  class="Mdish" style="padding-top: 80px;display: inline-block;"><div style="font-size: larger;">₱ 140</div>
+                    Northern Apple Stew -  -  -  -  -  -  -  -  -  -  ><input type="checkbox"  id="ad5"  onclick="add()">
+                    </div>
+                    <div class="MPdish" style="display: inline-block;padding-top: 50px; margin-left: 10px;">
+                        <img src="north.jpeg" alt="Northern Apple Stew" style="width: 160px;height: 90px;border-radius: 20%;position: absolute;">
+                    </div>
+    </div>
+<script>
+    function add(){
+        if(ad1.checked == 1){
+            localStorage.setItem('adsh', 'true');
+            localStorage.setItem('a1', '130');
+        }
+        if(ad2.checked == 1){
+            localStorage.setItem('adsh', 'true');
+            localStorage.setItem('a2', '190');
+        }
+        if(ad3.checked == 1){
+            localStorage.setItem('adsh', 'true');
+            localStorage.setItem('a3', '60');
+        }
+        if(ad4.checked == 1){
+            localStorage.setItem('adsh', 'true');
+            localStorage.setItem('a4', '150');
+        }
+        if(ad5.checked == 1){
+            localStorage.setItem('adsh', 'true');
+            localStorage.setItem('a5', '140');
+        }
+    }
+</script>
+<style>
+    .Mdish{
+        font-family:serif;
+        font-size: 20px;
+        font-weight: bolder
+    }
+    .MPdish{
+        width: auto;
+        height: 80px;
+        border-radius: 20%;
+        position: absolute;
+    }
+    .Button{
+        font-size: 30px;
+        margin-left: 20px;
+        background:linear-gradient(to bottom, #7EFFD4 0%, #588D95 100%);
+    }
+</style>
+</body>
+</html>

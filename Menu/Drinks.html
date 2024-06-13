@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+</head>
+<body style="background-image: url(bg.jpg);background-size:100% 100%;overflow: scroll;background-repeat: no-repeat;height:700px;">
+
+    <div style="display: block;">
+    <div style="width: auto;height: 100px;background: linear-gradient(to bottom, #7EFFD4 0%, #588D95 100%);">
+        <div style="text-align: center;padding-top: 25px;font-family:fantasy;display: block;">
+            <b style="font-size: 50px;">Xiao's Cusine</b>
+        </div>
+
+        <div style="padding-top: 40px;">
+            <br>
+            <div style="text-align: center;">
+        <div style="display: inline-block;">
+            <a href="Menu.html" ><button class="Button">Main Dishes</button></a>
+</div>
+
+<div style="display: inline-block;">
+    <a href="Vege.html"><button class="Button">Vegetables</button></a>
+</div>
+
+<div style="display: inline-block;">
+    <a href="Desert.html"><button class="Button">Desert</button></a>
+</div>
+
+<div style="display: inline-block;">
+    <a href="Drinks.html"><button class="Button">Drinks</button></a>
+</div>
+
+<div style="display: inline-block;">
+    <a href="Add.html"><button class="Button">Add Ons</button></a>
+</div>
+<div style="display: inline-block;">
+    <button class="Button" onclick="dh()"><script src="script.js"></script>RECEIPT</button>
+</div>
+            </div>
+        </div>
+        </div>
+    </div>
+<br>
+<div style="text-align: center;margin-top: 80px;font-family: fantasy;font-size: 30px;">Drinks</div>
+<div id="Main" style="display: block;position: absolute;padding-left: 280px;">
+
+        <div class = "Mdish"style="display: inline-block;padding-top: 20px;"><div style="font-size: larger;">₱ 60</div>Sparkling Berry Juice -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  ><input type="checkbox"  id="dk1"  onclick="dk1()"></div>
+        <div style="display: inline-block; margin-left: 10px;" class="MPdish">
+            <img src="Sparkling.jpeg" alt="Sparkling Berry Juice" style="width: auto;height: 90px;border-radius: 20%;position: absolute;top: -20px;">
+        </div>
+
+        <br>
+
+        <div  class="Mdish" style="padding-top: 80px;display: inline-block;"><div style="font-size: larger;">₱ 60</div>
+            Berry and Mint Burst -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  ><input type="checkbox"  id="dk2"  onclick="dk1()">
+        </div>
+        <div class="MPdish" style="display: inline-block;padding-top: 50px; margin-left: 10px;">
+            <img src="Berry.jpeg" alt="Berry and Mint Burst" style="width: auto;height: 90px;border-radius: 20%;position: absolute;">
+        </div>
+
+        <br>
+
+        <div  class="Mdish" style="padding-top: 80px;display: inline-block;"><div style="font-size: larger;">₱ 60</div>
+            Monsdtadt Apple Cider -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  ><input type="checkbox"  id="dk3"  onclick="dk1()">
+            </div>
+            <div class="MPdish" style="display: inline-block;padding-top: 50px; margin-left: 10px;">
+                <img src="Apple.jpeg" alt="Monsdtadt Apple Cider" style="width: 70px;height: 90px;border-radius: 20%;position: absolute;">
+            </div>
+
+            <br>
+
+    </div>
+<script>
+    function dk1(){
+        if(dk1.checked == 1){
+            localStorage.setItem('dksh', 'true');
+            localStorage.setItem('k1', '60');
+        }
+        if(dk2.checked == 1){
+            localStorage.setItem('dksh', 'true');
+            localStorage.setItem('k2', '60');
+        }
+        if(dk3.checked == 1){
+            localStorage.setItem('dksh', 'true');
+            localStorage.setItem('k3', '60');
+        }
+    }
+</script>
+<style>
+    .Mdish{
+        font-family:serif;
+        font-size: 20px;
+        font-weight: bolder
+    }
+    .MPdish{
+        width: auto;
+        height: 80px;
+        border-radius: 20%;
+        position: absolute;
+    }
+    .Button{
+        font-size: 30px;
+        margin-left: 20px;
+        background:linear-gradient(to bottom, #7EFFD4 0%, #588D95 100%);
+    }
+</style>
+</body>
+</html>

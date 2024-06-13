@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <title>Menu</title>
+    
+</head>
+<body style="background-image: url(bg.jpg);background-size:100% 100%;overflow: scroll;background-repeat: no-repeat;height: 900px;">
+        <div style="width: 100%;height: 100%;">
+            <div style="display: block;">
+                <div style="width: auto;height: 100px;background: linear-gradient(to bottom, #7EFFD4 0%, #588D95 100%);" class="text-center">
+                    <button class="btn btn-lg btn-danger" onclick="next()" style="position: absolute;left: 1rem;">EXIT<i class="fa fa-close"></i></button>
+                    <div style="text-align: center;padding-top: 25px;font-family:fantasy;display: block;">
+                        <b style="font-size: 3.125rem;">Xiao's Cusine</b>
+                    </div>
+            
+                    <div style="padding-top: 40px;">
+                        <br>
+                        <div style="text-align: center;">
+                    <div style="display: inline-block;">
+                        <a href="Menu.html" ><button class="Button">Main Dishes</button></a>
+            </div>
+            
+            <div style="display: inline-block;">
+                <a href="Vege.html"><button class="Button">Vegetables</button></a>
+            </div>
+            
+            <div style="display: inline-block;">
+                <a href="Desert.html"><button class="Button">Desert</button></a>
+            </div>
+            
+            <div style="display: inline-block;">
+                <a href="Drinks.html"><button class="Button">Drinks</button></a>
+            </div>
+            
+            <div style="display: inline-block;">
+                <a href="Add.html"><button class="Button">Add Ons</button></a>
+            </div>
+            <div style="display: inline-block;">
+                <button class="Button" onclick="dh()"><script src="script.js"></script>RECEIPT</button>
+            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            <br>
+            <div style="text-align: center;margin-top: 80px;font-family: fantasy;font-size: 30px;">Main Dishes</div>
+            <div id="Main" style="display: block;position: absolute;padding-left: 280px;">
+            
+                    <div class = "Mdish"style="display: inline-block;padding-top: 20px;" ><div style="font-size: larger;">₱ 190 </div>Sweet Madame -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  ><input type="checkbox"  id="mdish1"  onclick="m1()"><br></div>
+                    <div style="padding-top: -20px;display: inline-block; margin-left: 10px;" class="MPdish">
+                        <img src="sweet.jpg" alt="Sweet Madame" class="MPdish">
+                        
+                    </div>
+            
+                    <br>
+            
+                    <div  class="Mdish" style="padding-top: 80px;display: inline-block;" id="mdish"><div style="font-size: larger;">₱ 80</div>
+                    Jade Parcel -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  ><input type="checkbox"  id="mdish2"  onclick="m1()"><br></div>
+                    <div class="MPdish" style="display: inline-block;padding-top: 50px; margin-left: 10px;">
+                        <img src="jade.jpeg" alt="Jade Parcel" class="MPdish">
+                    </div>
+            
+                    <br>
+            
+                    <div  class="Mdish" style="padding-top: 80px;display: inline-block;" id="mdish"><div style="font-size: larger;">₱ 130</div>
+                        Golden Shrimp Balls -  -  -  -  -  -  -  -  -  -  -  ><input type="checkbox"  id="mdish3"  onclick="m1()">
+                        </div>
+                        <div class="MPdish" style="display: inline-block;padding-top: 50px; margin-left: 10px;">
+                            <img src="Shrimp.jpeg" alt="Golden Shrimp Balls" style="width: auto;height: 90px;border-radius: 20%;position: absolute;">
+                        </div>
+            
+                        <br>
+            
+                        <div  class="Mdish" style="padding-top: 80px;display: inline-block;" id="mdish"><div style="font-size: larger;">₱ 80</div>
+                            Satisfying Salad -  -  -  -  -  -  -  -  -  -  -  -  -  -  ><input type="checkbox"  id="mdish4"  onclick="m1()">
+                            </div>
+                            <div class="MPdish" style="display: inline-block;padding-top: 50px; margin-left: 10px;">
+                                <img src="sty salad.jpeg" alt="Satisfying Salad" style="width: auto;height: 85px;border-radius: 20%;position: absolute;">
+                            </div>
+            
+                            <br>
+            
+                            <div  class="Mdish" style="padding-top: 80px;display: inline-block;" id="mdish"><div style="font-size: larger;">₱ 130</div>
+                                Squirrel Fish -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  ><input type="checkbox"  id="mdish5"  onclick="m1()">
+                                </div>
+                                <div class="MPdish" style="display: inline-block;padding-top: 50px; margin-left: 10px;">
+                                    <img src="squirrel.jpeg" alt="Squirrel Fish" style="width: auto;height: 90px;border-radius: 20%;position: absolute;">
+                                </div>
+                </div>
+        </div>
+<script>
+    function m1(){
+    if (mdish1.checked == 1) {
+        localStorage.setItem('mdsh','true');
+        localStorage.setItem('m1', '190');
+
+    }
+    if (mdish2.checked == 1){
+        localStorage.setItem('mdsh','true');
+        localStorage.setItem('m2', '80');
+    }
+    if(mdish3.checked == 1){
+        localStorage.setItem('mdsh', 'true');
+        localStorage.setItem('m3', '130');
+    }
+    if(mdish4.checked == 1){
+        localStorage.setItem('mdsh', 'true');
+        localStorage.setItem('m4', '80');
+    }
+    if(mdish5.checked == 1){
+        localStorage.setItem('mdsh', 'true');
+        localStorage.setItem('m5', '130');
+    }
+}
+function next(){
+    open('/Users/Lenovo/Documents/ITEC87_FINAL_PROJECT/Main.html');
+}
+
+</script>
+<style>
+    .Mdish{
+        font-family:serif;
+        font-size: 20px;
+        font-weight: bolder
+    }
+    .MPdish{
+        width: auto;
+        height: 80px;
+        border-radius: 20%;
+        position: absolute;
+    }
+    .Button{
+        font-size: 30px;
+        margin-left: 20px;
+        background:linear-gradient(to bottom, #7EFFD4 0%, #588D95 100%);
+    }
+</style>
+</body>
+</html>
