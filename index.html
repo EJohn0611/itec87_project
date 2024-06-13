@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <title>Final Project</title>
+</head>
+<body>
+    <div class="text-center">
+    <div class="container">
+        <img src="avatar.jpeg" alt="Avatar" class="img-circle">
+    </div>
+    <div>
+        <br>
+        <label>Username: <input type="text" id="user"></label>
+        <br>
+        <br>
+        <label>Password: <input type="password" id="pass"></label>
+    </div>
+    <br>
+    <button class="btn btn-md btn-success rounded-0" onclick="success()">Log in</button>
+    </div>
+    <script>
+        function success(){
+            if(document.getElementById('user').value == 'John Enoza' && document.getElementById('pass').value == 'John123'){
+            open('Main.html');
+        }
+        else{
+            alert('Incorrect Username or Password');
+        }
+        }
+    </script>
+</body>
+</html>
