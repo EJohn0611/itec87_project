@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1 style="text-align: center;">Cashier</h1>
+<div style="width: 100%;height: 10;text-align: center;">
+    <img src="Logo.png" alt="Cashier" style="width: 20rem; height: 20rem;"><br>
+    <br>
+    <input type="number" id = "peso">
+    <br>
+    <br>
+    <a href="Jeans.html"><button onclick="Amount()">Add Amount</button></a>
+    <div style="margin-top: 2rem;">
+        <label>Senior<input type="radio" onclick="Senior()"></label>
+        <br>
+        <label>PWD<input type="radio" onclick="PWD()"></label>
+        <br>
+        <label>Student<input type="radio" onclick="Student()"></label>
+    </div>
+</div>
+<script>
+    function Amount(){
+        localStorage.setItem('amount',document.getElementById('peso').value);
+        localStorage.setItem('Sukli',parseInt(localStorage.getItem('amount')) - parseInt(localStorage.getItem('Sum')));
+    }
+    function Senior(){
+        localStorage.setItem('senior','0.20');
+        localStorage.setItem('discount',parseInt(localStorage.getItem('Total')) * 0.20);
+        localStorage.setItem('Sum',parseInt(localStorage.getItem('Total')) - parseInt(localStorage.getItem('discount')));
+    }
+    function PWD(){
+        localStorage.setItem('pwd','0.30');
+        localStorage.setItem('discount',parseInt(localStorage.getItem('Total')) * 0.30);
+        localStorage.setItem('Sum',parseInt(localStorage.getItem('Total')) - parseInt(localStorage.getItem('discount')));
+    }
+    function Student(){
+        localStorage.setItem('student','0.10');
+        localStorage.setItem('discount',parseInt(localStorage.getItem('Total')) * 0.10);
+        localStorage.setItem('Sum',parseInt(localStorage.getItem('Total')) - parseInt(localStorage.getItem('discount')));
+    }
+</script>
+</body>
+</html>

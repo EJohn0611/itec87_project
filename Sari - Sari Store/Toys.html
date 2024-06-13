@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <div style="display: block;width: 100%;height: 30%;text-align: center;">
+            <img src="Logo.png" alt="JS Clothing" style="width: 10rem; height: 10rem;">
+            <img src="Cart.jpeg" alt="Cart" style="width: 3rem;height: 3rem;border: 0.1rem solid;
+            border-radius: 5rem;position: absolute;right: 2rem;top: 2rem;" onclick="Receipt()">
+        </div>
+        
+        <div style="display: inline-block;width: 100%;height: 20%;">
+            <div style="background-color: gray;text-align: center;">
+        <a href="Jeans.html"><button class="choices">Jeans</button></a>
+        <a href="T-Shirt.html"><button class="choices">T-Shirt</button></a>
+        <a href="Perfume.html"><button class="choices">Perfume</button></a>
+        <a href="Sando.html"><button class="choices">Sando</button></a>
+        <button class="choices">Toys</button>
+        <button onclick="Cart()" style="
+        margin-left : 1rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        width: 10rem;
+        height: 2rem;
+        border-radius: 5rem;
+        font-size: larger;
+        border-color: transparent;
+        background-color: whitesmoke;
+        font-family: serif;
+        color: black;">Confirm Order</button>
+        <a href="Cashier.html"><button>Cashier</button></a>
+        <div style="display: inline-block;border: 0.01rem solid;">
+            <a href="Stocks.html"><button>Stocks</button></a>
+        </div>
+    </div>
+    </div>
+
+    <div class="Row1">
+        <img src="Toy1.jpeg" alt="Teddy Bear" style="width: 20rem; height: 20rem;">
+        <p class="textStyle">Teddy Bear</p>
+        <p id="J1" style="font-size: small;text-align: center;">Stock: </p>
+        <p class="textStyle">₱ 3,000</p>
+        <div class="addDeduc">
+            <button onclick="firstdiff()">-</button>
+            <input type="number" id = "Js1" value="0" style="text-align: center;">
+            <button onclick="firstadd()" type="button">+</button>
+        </div>
+    </div>
+
+    <div class="Row2">
+        <img src="Toy2.jpeg" alt="Lego Bricks" style="width: 20rem; height: 20rem;">
+        <p class="textStyle">Lego Bricks</p>
+        <p style="font-size: small;text-align: center;" id="J2">Stock: </p>
+        <p class="textStyle">₱ 2,500</p>
+        <div class="addDeduc">
+            <button onclick="secondiff()">-</button>
+            <input type="number" id = "Js2"  value="0" style="text-align: center;">
+            <button onclick="secondadd()">+</button>
+        </div>
+    </div>
+
+    <div class="Row3">
+        <img src="Toy3.jpeg" alt="Red Car" style="width: 20rem; height: 20rem;">
+        <p class="textStyle">Red Car</p>
+        <p style="font-size: small;text-align: center;" id="J3">Stock: </p>
+        <p class="textStyle">₱ 3,000</p>
+        <div class="addDeduc">
+            <button onclick="thirdiff()">-</button>
+            <input type="number" id = "Js3" value="0" style="text-align: center;">
+            <button onclick="thirdadd()">+</button>
+        </div>
+    </div>
+
+    <div class="Row4">
+        <img src="Toy4.jpeg" alt="Madagascar animal set" style="width: 20rem; height: 20rem;">
+        <p class="textStyle">Madagascar animal set</p>
+        <p style="font-size: small;text-align: center;" id="J4">Stock: </p>
+        <p class="textStyle">₱ 3,000</p>
+        <div class="addDeduc">
+            <button onclick="fourthdiff()">-</button>
+            <input type="number" id = "Js4" value="0" style="text-align: center;">
+            <button onclick="fourthadd()">+</button>
+        </div>
+    </div>
+    </div>
+    <style>
+        .choices{
+            margin-left : 1rem;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            width: 5rem;
+            height: 2rem;
+            border-radius: 5rem;
+            font-size: larger;
+            border-color: transparent;
+            background-color: black;
+            font-family: serif;
+            color: whitesmoke;
+        }
+
+        .Row1{
+            margin-top: 2rem;
+            display: inline-block;
+            position: absolute;
+            left: 20%;
+            top: 30%;
+            border: 0.01rem solid;
+        }
+
+        .Row2{
+            margin-top: 2rem;
+            display: inline-block;
+            position: absolute;
+            left: 50%;
+            top: 30%;
+            border: 0.01rem solid;
+        }
+        .textStyle{
+            text-align: center;
+            font-family: fantasy;
+        }
+        .addDeduc{
+            display: inline-block;
+            position: absolute;
+            left: 15%;
+            margin-top: 0.5rem;
+        }
+        .Row3{
+            margin-top: 1rem;
+            display: inline-block;
+            position: absolute;
+            left: 20%;
+            top: 100%;
+            border: 0.01rem solid;
+        }
+        .Row4{
+            margin-top: 1rem;
+            display: inline-block;
+            position: absolute;
+            left: 50%;
+            top: 100%;
+            border: 0.01rem solid;
+        }
+    </style>
+    <script>
+window.onload = localStorage.setItem('Receipt', '');
+
+        function firstadd() {
+            document.getElementById('Js1').value = parseInt(document.getElementById('Js1').value)+ + +1;
+            document.getElementById('J1').innerHTML = "Stocks: " + localStorage.getItem('Toy1');
+            if(localStorage.getItem('Toy1') == 0 ){
+                document.getElementById('Js1').value = 60;
+            }
+            else{
+                localStorage.setItem('Toy1',parseInt(localStorage.getItem('Toy1') - 1));
+            }
+        }
+        function firstdiff(){
+            if(document.getElementById('Js1').value > 0){
+                document.getElementById('Js1').value = parseInt(document.getElementById('Js1').value) - 1;
+                localStorage.setItem('Toy1',parseInt(localStorage.getItem('Toy1'))+ + +1);
+                document.getElementById('J1').innerHTML = "Stocks: " + localStorage.getItem('Toy1');
+            }
+        }
+        function secondadd(){
+            document.getElementById('Js2').value = parseInt(document.getElementById('Js2').value)+ + +1;
+            document.getElementById('J2').innerHTML = "Stocks: " + localStorage.getItem('Toy2');
+            if(localStorage.getItem('Toy2') == 0 ){
+                document.getElementById('Js2').value = 60;
+            }
+            else{
+                localStorage.setItem('Toy2',parseInt(localStorage.getItem('Toy2') - 1));
+            }
+        }
+        function secondiff(){
+            if(document.getElementById('Js2').value > 0){
+                document.getElementById('Js2').value = parseInt(document.getElementById('Js2').value) - 1;
+                localStorage.setItem('Toy2',parseInt(localStorage.getItem('Toy2'))+ + +1);
+                document.getElementById('J2').innerHTML = "Stocks: " + localStorage.getItem('Toy2');
+            }
+        }
+        function thirdadd(){
+            document.getElementById('Js3').value = parseInt(document.getElementById('Js3').value)+ + +1;
+            document.getElementById('J3').innerHTML = "Stocks: " + localStorage.getItem('Toy3');
+            if(localStorage.getItem('Toy3') == 0 ){
+                document.getElementById('Js3').value = 60;
+            }
+            else{
+                localStorage.setItem('Toy3',parseInt(localStorage.getItem('Toy3') - 1));
+            }
+        }
+        function thirdiff(){
+            if(document.getElementById('Js3').value > 0){
+                document.getElementById('Js3').value = parseInt(document.getElementById('Js3').value) - 1;
+                localStorage.setItem('Toy3',parseInt(localStorage.getItem('Toy3'))+ + +1);
+                document.getElementById('J3').innerHTML = "Stocks: " + localStorage.getItem('Toy3');
+            }
+        }
+        function fourthadd(){
+            document.getElementById('Js4').value = parseInt(document.getElementById('Js4').value)+ + +1;
+            document.getElementById('J4').innerHTML = "Stocks: " + localStorage.getItem('Toy4');
+            if(localStorage.getItem('Toy4') == 0 ){
+                document.getElementById('Js4').value = 60;
+            }
+            else{
+                localStorage.setItem('Toy4',parseInt(localStorage.getItem('Toy4') - 1));
+            }
+        }
+        function fourthdiff(){
+            if(document.getElementById('Js4').value > 0){
+                document.getElementById('Js4').value = parseInt(document.getElementById('Js4').value) - 1;
+                localStorage.setItem('Toy4',parseInt(localStorage.getItem('Toy4'))+ + +1);
+                document.getElementById('J4').innerHTML = "Stocks: " + localStorage.getItem('Toy4');
+            }
+        }
+        window.onload = function Stocks(){
+            localStorage.setItem('Total','0');
+            if(parseInt(localStorage.getItem('Toy1')) > 0){
+                document.getElementById('J1').innerHTML = "Stocks: " + parseInt(localStorage.getItem('Toy1'));
+            }
+            else{
+                document.getElementById('J1').innerHTML = "Stocks:" + 0;
+            }
+            if(parseInt(localStorage.getItem('Toy2')) > 0){
+                document.getElementById('J2').innerHTML = "Stocks: " + parseInt(localStorage.getItem('Toy2'));
+            }
+            else{
+                document.getElementById('J2').innerHTML = "Stocks:" + 0;
+            }
+            if(parseInt(localStorage.getItem('Toy3')) > 0){
+                document.getElementById('J3').innerHTML = "Stocks: " + parseInt(localStorage.getItem('Toy3'));
+            }
+            else{
+                document.getElementById('J3').innerHTML = "Stocks:" + 0;
+            }
+            if(parseInt(localStorage.getItem('Toy4')) > 0){
+                document.getElementById('J4').innerHTML = "Stocks: " + parseInt(localStorage.getItem('Toy4'));
+            }
+            else{
+                document.getElementById('J4').innerHTML = "Stocks:" + 0;
+            }
+        }
+        function Cart(){
+
+            if(document.getElementById('Js1').value > 0){
+                localStorage.setItem('Receipt',localStorage.getItem('Receipt') + 'Teddy Bear   ' + document.getElementById('Js1').value + '    ' + document.getElementById('Js1').value * 3000+'\n');
+                localStorage.setItem('Total',parseInt(localStorage.getItem('Total'))+ + +document.getElementById('Js1').value * 3000);
+            }
+            if(document.getElementById('Js2').value > 0){
+                localStorage.setItem('Receipt',localStorage.getItem('Receipt') + 'Lego Bricks   ' + document.getElementById('Js2').value + '    ' + document.getElementById('Js2').value * 2500+'\n');
+                localStorage.setItem('Total',parseInt(localStorage.getItem('Total'))+ + +document.getElementById('Js2').value * 3000);
+            }
+            if(document.getElementById('Js3').value > 0){
+                localStorage.setItem('Receipt',localStorage.getItem('Receipt') + 'Red Car   ' + document.getElementById('Js3').value + '    ' + document.getElementById('Js3').value * 3000+'\n');
+                localStorage.setItem('Total',parseInt(localStorage.getItem('Total'))+ + +document.getElementById('Js3').value * 3000);
+            }
+            if(document.getElementById('Js4').value > 0){
+                localStorage.setItem('Receipt',localStorage.getItem('Receipt') + 'Madagascar animal set   ' + document.getElementById('Js4').value + '    ' + document.getElementById('Js4').value * 3000+'\n');
+                localStorage.setItem('Total',parseInt(localStorage.getItem('Total'))+ + +document.getElementById('Js4').value * 3000);
+            }
+            var store = localStorage.getItem('Receipt');
+            localStorage.setItem('Ipon',store)
+            alert('Order Confirmed');
+        }
+        function Receipt(){
+
+
+alert(localStorage.getItem('Ipon') + 'Total: ' + '        ' + localStorage.getItem('Sum') +'\n' + 'Change: ' + '        ' + localStorage.getItem('Sukli'));
+
+
+        localStorage.removeItem('peso');
+        localStorage.removeItem('Receipt');
+        localStorage.removeItem('Ipon');
+        localStorage.removeItem('Total');
+        localStorage.removeItem('senior');
+        localStorage.removeItem('pwd');
+        localStorage.removeItem('Student');
+    }
+    </script>
+</body>
+</html>
